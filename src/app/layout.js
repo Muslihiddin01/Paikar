@@ -24,11 +24,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex items-start fixed z-1">
+        <aside className="fixed top-0 left-0 h-screen w-[20vw] bg-white shadow-md z-40">
           <Sidebar />
+        </aside>
+        <header className="fixed top-0 left-[20vw] w-[80vw] h-[76px] bg-white shadow z-50">
           <Header />
-        </div>
-        <main className="p-5 pl-10 absolute right-0 w-[80vw] top-[76px] bg-gray-100 min-h-screen">
+        </header>
+        <main className="ml-[20vw] mt-[76px] w-[79vw] p-5 bg-gray-100 min-h-screen">
           {children}
         </main>
       </body>

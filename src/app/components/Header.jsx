@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 const Header = () => {
     const router = useRouter() 
   return (
-    <header className="flex items-center justify-between p-5 bg-white text-gray-800 shadow-lg w-[80vw]">
+    <header className="flex items-center justify-between p-5 bg-white text-gray-800 shadow-lg">
       <div className="flex items-center space-x-4">
         <button onClick={()=>router.push("/")} className="p-2 bg-blue-500 hover:bg-gray-100 hover:text-gray-500 transition-colors delay-75 text-white rounded-md">
           <FaArrowLeft className="w-5 h-5" />
@@ -23,7 +23,7 @@ const Header = () => {
           <RiNotification3Line className="w-5 h-5" />
           <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>
-        <button className="p-2 rounded-full hover:bg-gray-100 text-gray-500">
+        <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors delay-75 text-gray-500">
           <IoMoonOutline className="w-5 h-5" />
         </button>
         <div className="flex items-center space-x-2 cursor-pointer">
