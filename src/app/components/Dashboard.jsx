@@ -9,7 +9,7 @@ const Dashboard = ({
   description,
   numerals,
 }) => {
-  const boxShadow = `0 10px 25px -5px ${iconColor}55, 0 8px 20px -6px ${iconColor}55`;
+    const boxShadow = `0 1px 5px -1px ${iconColor}55, 0 8px 20px -6px ${iconColor}55`;
   return (
     <article
       style={{ boxShadow: boxShadow }}

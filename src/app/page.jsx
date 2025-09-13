@@ -85,7 +85,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen  text-gray-800 ">
-      {/* Дата и день недели */}
       <section className="mb-6 p-4 bg-white rounded-lg shadow-lg flex justify-between gap-5">
         <article className="flex items-center gap-5">
           <div className="p-5 rounded-xl bg-gradient-to-r from-blue-500 via-blue-500 to-purple-400 text-yellow-300 font-semibold w-fit transform rotate-[5deg]">
@@ -112,7 +111,6 @@ export default function Home() {
         </article>
       </section>
 
-      {/* Основные карточки */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
         {dashboardInfo &&
           dashboardInfo.map((e, i) => {
@@ -130,7 +128,6 @@ export default function Home() {
           })}
       </section>
 
-      {/* Дополнительная статистика */}
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">
           Дополнительная статистика

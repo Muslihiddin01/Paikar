@@ -1,4 +1,9 @@
-import { FaArrowRight, FaBolt, FaMagnifyingGlass, FaPlus } from "react-icons/fa6";
+import {
+  FaArrowRight,
+  FaBolt,
+  FaMagnifyingGlass,
+  FaPlus,
+} from "react-icons/fa6";
 import { HiOutlineTicket } from "react-icons/hi2";
 import { Gi3dStairs, GiSiren } from "react-icons/gi";
 import { TbBolt } from "react-icons/tb";
@@ -16,6 +21,137 @@ import { RiDashboardLine } from "react-icons/ri";
 import { LuClipboardList, LuTable } from "react-icons/lu";
 import ApplicationCardThird from "@/app/components/ApplicationCardThird";
 export default function Applications() {
+  const applicationCardInfo = [
+    {
+      mainColor: "#ef4444",
+      icon: <FaFire />,
+      number: 1,
+      title: "Критическое",
+      bgAndShadowColor: "#fef2f2",
+      rangeColor: "#fee2e2",
+    },
+    {
+      mainColor: "#f97316",
+      icon: <CgDanger />,
+      number: 1,
+      title: "Высокие",
+      bgAndShadowColor: "#fff7ed",
+      rangeColor: "#ffedd5",
+    },
+    {
+      mainColor: "#eab308",
+      icon: <CiClock2 />,
+      number: 1,
+      title: "Средные",
+      bgAndShadowColor: "#fefce8",
+      rangeColor: "#fef9c3",
+    },
+    {
+      mainColor: "#22c55e",
+      icon: <HiOutlineTicket />,
+      number: 1,
+      title: "Низкие",
+      bgAndShadowColor: "#f0fdf4",
+      rangeColor: "#d1fae5",
+    },
+  ];
+
+  const applicationCardSecondInfo = [
+    {
+      icon: <MdEditCalendar />,
+      mainColor: "#3b82f6",
+      number: 3,
+      title: "Новые",
+      rangeColor: "#dbeafe",
+      rangeWidth: "w-[80%] px-3",
+    },
+    {
+      icon: <CgDanger />,
+      mainColor: "#a855f7",
+      number: 0,
+      title: "Просроченно",
+      rangeColor: "#ede9fe",
+      rangeWidth: "",
+    },
+    {
+      icon: <FaRegCheckCircle />,
+      mainColor: "#22c55e",
+      number: 0,
+      title: "Завершено",
+      rangeColor: "#d1fae5",
+      rangeWidth: "",
+    },
+  ];
+
+  const applicationCardThirdInfo = [
+    {
+      icon: <GiSiren />,
+      mainColor: "#dc2626",
+      title: "Критические",
+      description: "Требует немедленного исправления",
+      number: 1,
+      cardItems: {
+        id: "#REQ-2025-7542fac0-0002",
+        status: "КРИТ",
+        title: "Second Ticket",
+        description: "Second test",
+        bgColor: "#fee2e2",
+        priority: "Критический",
+        category: "ИТ",
+        location: "Office",
+      },
+    },
+    {
+      icon: <TbBolt />,
+      mainColor: "#ea580c",
+      title: "Высокие",
+      description: "Важные задачи на сегодня",
+      number: 1,
+      cardItems: {
+        id: "#REQ-2025-7542fac0-0004",
+        title: "Ремонт кондиционера в офисе",
+        description:
+          "Кондиционер в главном офисе перестал работать. Требуется диагностика и...",
+        bgColor: "#ffedd5",
+        priority: "Высокий",
+        category: "АХО",
+        location: "Главный офис, комната 305",
+      },
+    },
+    {
+      icon: <MdEditCalendar />,
+      mainColor: "#6b8e23",
+      title: "Средные",
+      description: "Стандартные рабочие задачи",
+      number: 1,
+      cardItems: {
+        id: "#REQ-2025-7542fac0-0003",
+        title: "Новая заявка",
+        description: "Тест",
+        bgColor: "#f0f5e6",
+        priority: "Средный",
+        category: "Электрика",
+        location: "ул. Айни 16б, 6 этаж",
+      },
+    },
+    {
+      icon: <LuClipboardList />,
+      mainColor: "#16a34a",
+      title: "Низкие",
+      description: "Можно выполнить позже",
+      number: 1,
+      cardItems: {
+        id: "#REQ-2025-7542fac0-0001",
+        title: "Test Ticket Fixed",
+        description: "Test description",
+        bgColor: "#d1fae5",
+        priority: "Низкий",
+        category: "АХО",
+        location: "Test location",
+      },
+    },
+  ];
+
   return (
     <main className="px-7">
       <section className="flex items-center gap-5 justify-between">
@@ -69,65 +205,31 @@ export default function Applications() {
           </div>
         </article>
 
-        <ApplicationCard
-          mainColor={"#ef4444"}
-          icon={<FaFire />}
-          number={1}
-          title={"Критическое"}
-          bgAndShadowColor={"#fef2f2"}
-          rangeColor={"#fee2e2"}
-        />
-        <ApplicationCard
-          mainColor={"#f97316"}
-          icon={<CgDanger />}
-          number={1}
-          title={"Высокие"}
-          bgAndShadowColor={"#fff7ed"}
-          rangeColor={"#ffedd5"}
-        />
-        <ApplicationCard
-          mainColor={"#eab308"}
-          icon={<CiClock2 />}
-          number={1}
-          title={"Средные"}
-          bgAndShadowColor={"#fefce8"}
-          rangeColor={"#fef9c3"}
-        />
-        <ApplicationCard
-          mainColor={"#22c55e"}
-          icon={<HiOutlineTicket />}
-          number={1}
-          title={"Низкие"}
-          bgAndShadowColor={"#f0fdf4"}
-          rangeColor={"#d1fae5"}
-        />
+        {applicationCardInfo.map((item, index) => (
+          <ApplicationCard
+            key={index}
+            mainColor={item.mainColor}
+            icon={item.icon}
+            number={item.number}
+            title={item.title}
+            bgAndShadowColor={item.bgAndShadowColor}
+            rangeColor={item.rangeColor}
+          />
+        ))}
       </section>
 
       <section className="grid md:grid-cols-3 gap-5 my-10">
-        <ApplicationCardSecond
-          icon={<MdEditCalendar />}
-          mainColor={"#3b82f6"}
-          number={3}
-          title={"Новые"}
-          rangeColor={"#dbeafe"}
-          rangeWidth={"w-[80%] px-3"}
-        />
-        <ApplicationCardSecond
-          icon={<CgDanger />}
-          mainColor={"#a855f7"}
-          number={0}
-          title={"Просроченно"}
-          rangeColor={"#ede9fe"}
-          rangeWidth={""}
-        />
-        <ApplicationCardSecond
-          icon={<FaRegCheckCircle />}
-          mainColor={"#22c55e"}
-          number={0}
-          title={"Завершено"}
-          rangeColor={"#d1fae5"}
-          rangeWidth={""}
-        />
+        {applicationCardSecondInfo.map((item, index) => (
+          <ApplicationCardSecond
+            key={index}
+            icon={item.icon}
+            mainColor={item.mainColor}
+            number={item.number}
+            title={item.title}
+            rangeColor={item.rangeColor}
+            rangeWidth={item.rangeWidth}
+          />
+        ))}
       </section>
 
       <section className="my-10 p-7 shadow-lg rounded-xl flex items-center justify-between">
@@ -157,35 +259,10 @@ export default function Applications() {
         </button>
       </section>
 
-      <section className="my-10 p-7 shadow-lg rounded-xl grid md:grid-cols-4">
-        <ApplicationCardThird
-          icon={<GiSiren />}
-          mainColor={"#dc2626"}
-          title={"Критические"}
-          description={"Требует немедленного исправления"}
-          number={1}
-        />
-        <ApplicationCardThird
-          icon={<TbBolt />}
-          mainColor={"#ea580c"}
-          title={"Высокие"}
-          description={"Важные задачи на сегодня"}
-          number={1}
-        />
-        <ApplicationCardThird
-          icon={<MdEditCalendar />}
-          mainColor={"#6b8e23"}
-          title={"Средные"}
-          description={"Стандартные рабочие задачи"}
-          number={1}
-        />
-        <ApplicationCardThird
-          icon={<LuClipboardList />}
-          mainColor={"#16a34a"}
-          title={"Низкие"}
-          description={"Можно выполнить позже"}
-          number={1}
-        />
+      <section className="my-10 border-y border-gray-100 rounded-full gap-3 grid md:grid-cols-4">
+        {applicationCardThirdInfo.map((item, index) => (
+          <ApplicationCardThird key={index} {...item} />
+        ))}
       </section>
     </main>
   );
